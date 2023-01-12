@@ -120,9 +120,11 @@ function main(){
 let result = main();
 console.log(result);
 console.log('possible reuslts:' , result.length);
-for(let i = 0; i < result.length; i++){
-  const labels = result[i].map((x: any) => x.piece?.label)
-  const positions = result[i].map((p: any) => p.position);
-  console.table({labels, positions});
-  console.log(i);
-}
+// remove the comment bellow if you wish to see all the configurations
+// DISCLAIMER: it can be slow
+// for(let i = 0; i < result.length; i++){
+//   const labels = result[i].map((x: any) => x.piece?.label)
+//   const positions = result[i].map((p: any) => p.position);
+//   console.table({labels, positions});
+//   console.log(i);
+// }
