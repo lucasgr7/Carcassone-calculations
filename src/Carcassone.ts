@@ -113,7 +113,6 @@ function main(){
     let nextPieces = availablePieces.filter(p => p.label !== placementPiece.label);
     checkPiecePlacement(placementPiece, combinations, nextPieces, results);
   }
-  
   return results;
 }
 
