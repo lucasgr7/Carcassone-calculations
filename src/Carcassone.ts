@@ -4,6 +4,15 @@ const
   ROAD= 1,
   CITY= 2,
   FIELD= 3;
+  
+const START = {
+  label: 'START',
+  sides: [RIVER, FIELD, FIELD, FIELD]
+};
+const END = {
+  label: 'END',
+  sides: [RIVER, FIELD, FIELD, FIELD]
+};
 
 // orientation TOP = 0, RIGHT = 1, BOTTOM = 2, LEFT = 3
 const pieces = {
@@ -47,14 +56,10 @@ const pieces = {
     label: 'J',
     sides: [FIELD, RIVER, ROAD, RIVER],
   },
-};
-const START = {
-  label: 'START',
-  sides: [RIVER, FIELD, FIELD, FIELD]
-};
-const END = {
-  label: 'END',
-  sides: [RIVER, FIELD, FIELD, FIELD]
+  K:{
+    label: 'K',
+    sides: [ROAD, RIVER, ROAD, RIVER],
+  }
 };
 
 function placeLastPiece(lastArrangement: any, combinations: any, results: any[]){
@@ -105,8 +110,8 @@ function checkPiecePlacement(newpiece: any, combinations: any, nextPieces: any, 
 function main(){
   let results = [] as any[];
   let combinations = [{piece: START, position: [null, null]}];
-  let {A, C, E, F, G, H, J} = pieces;
-  const availablePieces = [A, C, E, F, G, H, J];
+  let {A, C, E, F, G, H, J, K} = pieces;
+  const availablePieces = [A, C, E, F, G, H, J, K];
   for(let i = 0; i < availablePieces.length; i++){
     let placementPiece = availablePieces[i];
     // add a piece to the configuration and remoe it from the pieces
